@@ -1,0 +1,721 @@
+/**
+ * Delight Enhancements for Financial Services Landing Page
+ * Professional whimsy that builds trust and engagement
+ * All animations respect prefers-reduced-motion
+ */
+
+/* ========================================
+   FOUNDATIONAL ANIMATION VARIABLES
+   ======================================== */
+:root {
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-smooth: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0.0, 0.6, 1);
+  --transition-fast: 150ms;
+  --transition-medium: 300ms;
+  --transition-slow: 500ms;
+
+  --color-success: #10b981;
+  --color-trust: #3b82f6;
+  --color-premium: #6366f1;
+}
+
+/* ========================================
+   1. BUTTON CLICK ANIMATIONS (SATISFYING)
+   ======================================== */
+.btn-delightful {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition: all var(--transition-medium) var(--ease-smooth);
+}
+
+/* Hover state with subtle lift */
+.btn-delightful:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15),
+              0 8px 10px -6px rgba(59, 130, 246, 0.2);
+}
+
+/* Active state with satisfying press */
+.btn-delightful:active {
+  transform: translateY(0) scale(0.98);
+  transition-duration: var(--transition-fast);
+}
+
+/* Ripple effect on click */
+.btn-delightful::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width var(--transition-slow) var(--ease-smooth),
+              height var(--transition-slow) var(--ease-smooth),
+              opacity var(--transition-slow) var(--ease-smooth);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.btn-delightful.clicked::after {
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+}
+
+/* Shimmer effect for primary CTA */
+.btn-primary-cta {
+  background: linear-gradient(
+    120deg,
+    var(--color-trust) 0%,
+    var(--color-premium) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.6s var(--ease-smooth);
+}
+
+.btn-primary-cta:hover::before {
+  left: 100%;
+}
+
+/* ========================================
+   2. TESTIMONIAL HOVER EFFECTS (PLAYFUL)
+   ======================================== */
+.testimonial-card {
+  position: relative;
+  transition: all var(--transition-medium) var(--ease-smooth);
+  cursor: pointer;
+}
+
+/* Gentle lift and glow */
+.testimonial-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15),
+              0 0 0 1px rgba(59, 130, 246, 0.1);
+}
+
+/* Avatar bounce on hover */
+.testimonial-avatar {
+  transition: transform var(--transition-medium) var(--ease-bounce);
+}
+
+.testimonial-card:hover .testimonial-avatar {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Quote marks animate in */
+.testimonial-quote::before,
+.testimonial-quote::after {
+  transition: all var(--transition-medium) var(--ease-smooth);
+  opacity: 0.3;
+}
+
+.testimonial-card:hover .testimonial-quote::before {
+  transform: translateX(-4px) translateY(-4px);
+  opacity: 0.6;
+}
+
+.testimonial-card:hover .testimonial-quote::after {
+  transform: translateX(4px) translateY(4px);
+  opacity: 0.6;
+}
+
+/* Star rating sparkle */
+.testimonial-rating {
+  position: relative;
+}
+
+.testimonial-rating .star {
+  display: inline-block;
+  transition: transform var(--transition-fast) var(--ease-bounce);
+}
+
+.testimonial-card:hover .testimonial-rating .star {
+  animation: starSparkle 0.6s var(--ease-bounce);
+}
+
+.testimonial-card:hover .testimonial-rating .star:nth-child(1) { animation-delay: 0s; }
+.testimonial-card:hover .testimonial-rating .star:nth-child(2) { animation-delay: 0.05s; }
+.testimonial-card:hover .testimonial-rating .star:nth-child(3) { animation-delay: 0.1s; }
+.testimonial-card:hover .testimonial-rating .star:nth-child(4) { animation-delay: 0.15s; }
+.testimonial-card:hover .testimonial-rating .star:nth-child(5) { animation-delay: 0.2s; }
+
+@keyframes starSparkle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.2) rotate(-10deg); }
+  75% { transform: scale(1.2) rotate(10deg); }
+}
+
+/* ========================================
+   3. SMOOTH SECTION TRANSITIONS
+   ======================================== */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--ease-smooth),
+              transform 0.8s var(--ease-smooth);
+}
+
+.section-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children for cascade effect */
+.section-reveal.visible > * {
+  animation: cascadeIn 0.6s var(--ease-smooth) backwards;
+}
+
+.section-reveal.visible > *:nth-child(1) { animation-delay: 0.1s; }
+.section-reveal.visible > *:nth-child(2) { animation-delay: 0.2s; }
+.section-reveal.visible > *:nth-child(3) { animation-delay: 0.3s; }
+.section-reveal.visible > *:nth-child(4) { animation-delay: 0.4s; }
+.section-reveal.visible > *:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes cascadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   4. INTERACTIVE CHART ELEMENTS
+   ======================================== */
+.chart-bar {
+  transition: all var(--transition-medium) var(--ease-smooth);
+  cursor: pointer;
+}
+
+.chart-bar:hover {
+  opacity: 0.8;
+  transform: scaleY(1.05);
+  transform-origin: bottom;
+  filter: brightness(1.1);
+}
+
+/* Tooltip appears with bounce */
+.chart-tooltip {
+  opacity: 0;
+  transform: translateY(10px) scale(0.9);
+  transition: all var(--transition-medium) var(--ease-bounce);
+  pointer-events: none;
+}
+
+.chart-bar:hover .chart-tooltip {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* Chart bars animate in on scroll */
+.chart-bar-animated {
+  animation: barGrowth 0.8s var(--ease-smooth) backwards;
+}
+
+@keyframes barGrowth {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+/* Number counter animation */
+.stat-number {
+  display: inline-block;
+}
+
+.stat-number.counting {
+  animation: numberPulse 0.5s var(--ease-bounce);
+}
+
+@keyframes numberPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); color: var(--color-trust); }
+}
+
+/* ========================================
+   5. FORM LOADING STATES (FUN)
+   ======================================== */
+.form-field {
+  position: relative;
+}
+
+/* Focused field glow */
+.form-field input:focus,
+.form-field textarea:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1),
+              0 1px 3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+  transition: all var(--transition-medium) var(--ease-smooth);
+}
+
+/* Success state with checkmark animation */
+.form-field.success::after {
+  content: '✓';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  color: var(--color-success);
+  font-weight: bold;
+  font-size: 18px;
+  animation: checkmarkPop 0.4s var(--ease-bounce) forwards;
+}
+
+@keyframes checkmarkPop {
+  0% { transform: translateY(-50%) scale(0) rotate(-180deg); }
+  50% { transform: translateY(-50%) scale(1.2) rotate(10deg); }
+  100% { transform: translateY(-50%) scale(1) rotate(0deg); }
+}
+
+/* Loading state with animated dots */
+.btn-loading {
+  pointer-events: none;
+  position: relative;
+  color: transparent;
+}
+
+.btn-loading::after {
+  content: 'Processing';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  animation: loadingDots 1.5s infinite;
+}
+
+@keyframes loadingDots {
+  0%, 20% { content: 'Processing'; }
+  40% { content: 'Processing.'; }
+  60% { content: 'Processing..'; }
+  80%, 100% { content: 'Processing...'; }
+}
+
+/* Spinner animation */
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ========================================
+   6. CELEBRATION ANIMATIONS
+   ======================================== */
+.celebration-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Confetti particle */
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--color-success);
+  animation: confettiFall 3s ease-out forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotateZ(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotateZ(720deg);
+    opacity: 0;
+  }
+}
+
+/* Success checkmark circle */
+.success-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--color-success);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: successPulse 0.6s var(--ease-bounce) forwards;
+  z-index: 10000;
+}
+
+.success-circle::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+@keyframes successPulse {
+  0% { transform: translate(-50%, -50%) scale(0); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Subtle celebration for micro-interactions */
+.micro-celebrate {
+  animation: microBounce 0.4s var(--ease-bounce);
+}
+
+@keyframes microBounce {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.05); }
+  75% { transform: scale(0.95); }
+}
+
+/* ========================================
+   7. CURSOR EFFECTS (SUBTLE)
+   ======================================== */
+.cursor-area {
+  position: relative;
+}
+
+/* Magnetic cursor effect on key CTAs */
+.magnetic-cursor {
+  cursor: pointer;
+  transition: transform var(--transition-fast) var(--ease-smooth);
+}
+
+/* Custom cursor trail (optional - activate on hero section) */
+.custom-cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-trust);
+  pointer-events: none;
+  z-index: 10000;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor.hidden {
+  opacity: 0;
+}
+
+/* Spotlight effect on hover */
+.spotlight-area {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-area::before {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.1) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-medium) var(--ease-smooth);
+  transform: translate(-50%, -50%);
+}
+
+.spotlight-area:hover::before {
+  opacity: 1;
+}
+
+/* ========================================
+   8. EASTER EGGS (SUBTLE)
+   ======================================== */
+
+/* Logo bounce on triple click */
+.logo-easter-egg {
+  transition: transform var(--transition-medium) var(--ease-bounce);
+}
+
+.logo-easter-egg.activated {
+  animation: logoParty 2s var(--ease-bounce);
+}
+
+@keyframes logoParty {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  10% { transform: rotate(-10deg) scale(1.1); }
+  20% { transform: rotate(10deg) scale(1.1); }
+  30% { transform: rotate(-10deg) scale(1.1); }
+  40% { transform: rotate(10deg) scale(1.1); }
+  50% { transform: rotate(0deg) scale(1); }
+}
+
+/* Konami code activation - premium theme */
+.konami-activated {
+  animation: premiumGlow 2s ease-in-out infinite;
+}
+
+@keyframes premiumGlow {
+  0%, 100% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(20deg); }
+}
+
+/* Footer signature reveal on hover */
+.footer-signature {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all var(--transition-medium) var(--ease-smooth);
+}
+
+.footer:hover .footer-signature {
+  opacity: 0.6;
+  transform: translateY(0);
+}
+
+/* ========================================
+   9. ACCESSIBILITY & REDUCED MOTION
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .btn-delightful:hover {
+    transform: none;
+  }
+
+  .testimonial-card:hover {
+    transform: none;
+  }
+
+  .section-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* High contrast mode adjustments */
+@media (prefers-contrast: high) {
+  .btn-delightful:hover {
+    outline: 2px solid currentColor;
+  }
+
+  .testimonial-card:hover {
+    outline: 2px solid currentColor;
+  }
+}
+
+/* ========================================
+   10. LOADING STATES & SKELETONS
+   ======================================== */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: skeletonLoading 1.5s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+@keyframes skeletonLoading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Progressive image loading */
+.progressive-image {
+  filter: blur(10px);
+  transition: filter 0.6s var(--ease-smooth);
+}
+
+.progressive-image.loaded {
+  filter: blur(0);
+}
+
+/* ========================================
+   11. TRUST BADGES & SOCIAL PROOF
+   ======================================== */
+.trust-badge {
+  transition: all var(--transition-medium) var(--ease-smooth);
+}
+
+.trust-badge:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Live counter animation */
+.live-stat {
+  position: relative;
+  display: inline-block;
+}
+
+.live-stat::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-success) 0%,
+    var(--color-trust) 100%
+  );
+  animation: statPulse 2s ease-in-out infinite;
+}
+
+@keyframes statPulse {
+  0%, 100% { opacity: 0.5; transform: scaleX(1); }
+  50% { opacity: 1; transform: scaleX(1.1); }
+}
+
+/* ========================================
+   12. SCROLL PROGRESS INDICATOR
+   ======================================== */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-trust) 0%,
+    var(--color-premium) 100%
+  );
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* ========================================
+   13. MICRO-INTERACTIONS
+   ======================================== */
+
+/* Badge pulse */
+.badge-pulse {
+  position: relative;
+}
+
+.badge-pulse::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: inherit;
+  transform: translate(-50%, -50%);
+  animation: pulse 2s ease-out infinite;
+  opacity: 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Smooth hover underline */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width var(--transition-medium) var(--ease-smooth);
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Card shine effect */
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  transition: transform 0.8s var(--ease-smooth);
+}
+
+.card-shine:hover::before {
+  transform: translateX(100%) translateY(100%) rotate(45deg);
+}

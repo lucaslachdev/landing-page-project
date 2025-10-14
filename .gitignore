@@ -1,0 +1,129 @@
+# ========================================
+# .gitignore - Landing Page Trading Pro
+# ========================================
+
+# Editor e IDE
+# ----------------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.atom/
+.claude/
+*.swp
+*.swo
+*~
+
+# Sistema Operacional
+# ----------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs
+# ----------------------------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Arquivos Temporários
+# ----------------------------------------
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+.cache/
+.temp/
+tmp/
+
+# Backups
+# ----------------------------------------
+*.backup
+*_backup.*
+backup/
+
+# Ambiente (se adicionar no futuro)
+# ----------------------------------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+config/local.js
+config/secrets.js
+
+# Dependências (se adicionar npm/yarn)
+# ----------------------------------------
+node_modules/
+bower_components/
+jspm_packages/
+
+# Build e Distribuição (se adicionar build process)
+# ----------------------------------------
+dist/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+*.min.js
+*.min.css
+*.map
+
+# Testes e Cobertura
+# ----------------------------------------
+coverage/
+.nyc_output/
+*.lcov
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+.pytest_cache/
+
+# Arquivos de configuração local
+# ----------------------------------------
+.eslintcache
+.stylelintcache
+.prettierignore
+
+# MacOS
+# ----------------------------------------
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Windows
+# ----------------------------------------
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+# ----------------------------------------
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
