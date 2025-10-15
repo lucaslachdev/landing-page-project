@@ -1,110 +1,72 @@
-# 📈 Trading Pro - Landing Page
+# 📈 Landing Page - Curso de Trading
 
-[![Ver Demo](https://img.shields.io/badge/Ver%20Demo-Live-success?style=for-the-badge)](https://SEU-USUARIO.github.io/NOME-DO-REPO/)
-[![Abrir Página](https://img.shields.io/badge/Abrir-index.html-blue?style=for-the-badge)](./index.html)
+[![Ver Projeto](https://img.shields.io/badge/🔗_Ver_Projeto-Ao_Vivo-blue?style=for-the-badge)](https://SEU-USUARIO.github.io/NOME-DO-REPO/)
 
-> Landing page profissional para curso de trading e investimentos com design moderno e alta conversão.
+> Projeto desenvolvido como landing page de conversão para curso de trading e investimentos financeiros.
 
-## ✨ Destaques
+![Preview](https://via.placeholder.com/800x400/0A0E17/FFB800?text=Preview+da+Landing+Page)
 
-- 🎨 Design dark mode premium com glassmorphism
-- 📱 Totalmente responsivo (mobile-first)
-- ⚡ Performance otimizada (~89KB total)
-- 🚀 Zero dependências de frameworks
-- 🎭 Animações suaves com Intersection Observer
+## 💡 Sobre o Projeto
 
-## 🎯 Funcionalidades
+Landing page moderna focada em **alta conversão**, desenvolvida com técnicas de copywriting persuasivo, design premium dark mode e animações interativas. O projeto demonstra habilidades em desenvolvimento front-end, UX/UI design e otimização de performance.
 
-- **Countdown Timer** dinâmico com reset automático
-- **Modal de Captura** de leads com validação
-- **FAQ Accordion** interativo
-- **Scroll Animations** com fade-in
-- **Mobile Menu** responsivo
-- **Live Notifications** (social proof)
-- **Gráfico Animado** em Canvas
-- **7 Módulos** de conteúdo
-- **6 Depoimentos** com avatares
+## 🚀 Tecnologias Utilizadas
 
-## 🛠️ Tecnologias
+- **HTML5** - Estrutura semântica e acessível
+- **CSS3** - Design responsivo com variáveis customizadas e glassmorphism
+- **JavaScript (Vanilla)** - Interações dinâmicas sem dependências
+- **Intersection Observer API** - Animações otimizadas ao scroll
+- **Canvas API** - Gráficos animados
 
-- HTML5 (semântico)
-- CSS3 (variáveis customizadas)
-- JavaScript ES6+ Vanilla
-- Google Fonts (Inter + Poppins)
+## ✨ Funcionalidades Desenvolvidas
 
-## 🚀 Como Usar
+- ⏱️ Countdown timer dinâmico com reset automático
+- 📊 Gráfico financeiro animado em Canvas
+- 🎭 Animações suaves ao scroll (fade-in, slide-up)
+- 📱 Menu mobile responsivo com animação
+- 💬 FAQ accordion interativo
+- 🔔 Sistema de notificações live (social proof)
+- 📝 Modal de captura de leads com validação
+- 🎯 Navegação com smooth scroll
 
-**Opção 1: Abrir diretamente**
-```bash
-# Clone e abra o index.html no navegador
-git clone https://github.com/seu-usuario/trading-pro-landing.git
-```
+## 🎨 Diferenciais Técnicos
 
-**Opção 2: Com servidor local**
-```bash
-# Python
-python -m http.server 8000
-
-# PHP
-php -S localhost:8000
-```
-
-Depois acesse: `http://localhost:8000`
-
-## ⚙️ Customização Rápida
-
-**Cores** - Edite variáveis CSS em `styles.css`:
-```css
-:root {
-    --primary: #0066FF;
-    --gold: #FFB800;
-    --bg-dark: #0A0E17;
-}
-```
-
-**Preços** - Altere valores no `index.html` (procure por "pricing-section")
-
-**Timer** - Ajuste duração em `script.js` (procure por "countdownDate")
-
-## 📋 Estrutura
-
-```
-├── index.html                    # Página principal
-├── styles.css                    # Estilos
-├── script.js                     # JavaScript
-├── README.md                     # Este arquivo
-├── delight-demo.html            # Demo de animações extras
-└── docs/                        # Documentação adicional
-```
-
-## ⚠️ Importante
-
-- **Formulário**: Atualmente só loga no console. Para produção, integre com backend.
-- **HTTPS**: Necessário para geolocalização em produção.
-- **LGPD**: Adicione política de privacidade antes de usar comercialmente.
+- **Performance**: ~89KB total (~25KB gzipped)
+- **Zero dependências**: 100% vanilla JavaScript
+- **Mobile-first**: Design responsivo para todos os dispositivos
+- **Animações otimizadas**: Uso de GPU acceleration
+- **SEO-friendly**: Estrutura semântica e meta tags
 
 ## 📱 Responsividade
 
-Testado em:
-- ✅ Desktop (1280px+)
-- ✅ Tablet (768-1279px)
-- ✅ Mobile (<768px)
-- ✅ Chrome, Firefox, Safari, Edge
+✅ Desktop (1280px+)
+✅ Tablet (768-1279px)
+✅ Mobile (<768px)
+✅ Testado em Chrome, Firefox, Safari e Edge
 
-## 📊 Performance
+## 🎯 Objetivo do Projeto
 
-- First Contentful Paint: <1.5s
-- Time to Interactive: <3s
-- Total: ~89KB (~25KB gzipped)
+Demonstrar capacidades em:
+- Desenvolvimento de páginas de alta conversão
+- Criação de interfaces modernas e atraentes
+- Implementação de animações e micro-interações
+- Código limpo e manutenível
+- Otimização de performance
 
-## 📝 Licença
+## 📂 Estrutura
 
-MIT - Use livremente em projetos pessoais ou comerciais.
+```
+├── index.html              # Página principal
+├── styles.css              # Estilos e design system
+├── script.js               # Lógica e interações
+└── README.md              # Documentação
+```
 
-## 👨‍💻 Autor
+## 🔗 Links
 
-**Lucas Vinicius**
+- [Ver Projeto Online](https://lucaslachdev.github.io/landing-page-project/)
+- [Código Fonte](./index.html)
 
 ---
 
-⭐ **Se este projeto foi útil, considere dar uma estrela!**
+**Desenvolvido por Lucas Vinicius** | 2025
