@@ -1,10 +1,16 @@
 # 📈 Landing Page - Curso de Trading
 
-[![Ver Projeto](https://img.shields.io/badge/🔗_Ver_Projeto-Ao_Vivo-blue?style=for-the-badge)](https://SEU-USUARIO.github.io/NOME-DO-REPO/)
+<div align="center">
 
-> Projeto desenvolvido como landing page de conversão para curso de trading e investimentos financeiros.
+![Preview do Projeto](./screenshot.png)
 
-![Preview](https://via.placeholder.com/800x400/0A0E17/FFB800?text=Preview+da+Landing+Page)
+[![Ver Projeto Ao Vivo](https://img.shields.io/badge/🔗_Ver_Projeto-Ao_Vivo-success?style=for-the-badge)]( https://lucaslachdev.github.io/landing-page-project/)
+
+*Projeto desenvolvido como landing page de conversão para curso de trading e investimentos financeiros.*
+
+</div>
+
+---
 
 ## 💡 Sobre o Projeto
 
@@ -53,20 +59,20 @@ Demonstrar capacidades em:
 - Código limpo e manutenível
 - Otimização de performance
 
-## 📂 Estrutura
+## 📂 Estrutura do Projeto
 
 ```
 ├── index.html              # Página principal
 ├── styles.css              # Estilos e design system
 ├── script.js               # Lógica e interações
+├── screenshot.png          # Preview do projeto
 └── README.md              # Documentação
 ```
 
-## 🔗 Links
-
-- [Ver Projeto Online](https://lucaslachdev.github.io/landing-page-project/)
-- [Código Fonte](./index.html)
-
 ---
 
+<div align="center">
+
 **Desenvolvido por Lucas Vinicius** | 2025
+
+</div>
